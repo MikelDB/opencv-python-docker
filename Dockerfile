@@ -1,4 +1,6 @@
 FROM python:3.7
+LABEL maintainer="Mikel Díez Buil mikeldiezbuil@gmail.com"
+LABEL based_on="jjanzic/docker-python3-openc"
 
 RUN apt-get update \
     && apt-get install -y \
