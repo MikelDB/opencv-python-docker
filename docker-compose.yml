@@ -1,0 +1,14 @@
+version: '3'
+services:
+  opencv:
+    working_dir: /home/code
+    image: opencv-python3:latest
+    command: python code/test_cameras.py
+    volumes:
+        - "./:/home/code/:delegated"
+        - "/tmp/.X11-unix:/tmp/.X11-unix"
+    environment:
+      - DISPLAY
+    devices:
+      - "/dev/dri:/dev/dri"
+      - "/dev/video0:/dev/video0"
